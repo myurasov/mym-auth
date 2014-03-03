@@ -1,0 +1,30 @@
+{
+  "name": "myurasov/mym-auth",
+  "description": "Auth service",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mikhail Yurasov",
+      "email": "me@yurasov.me"
+    }
+  ],
+
+  "minimum-stability": "dev",
+
+  "require": {
+    "myurasov/mym-utils": "*",
+    "symfony/httpfoundation": "~2.0",
+    "php": "~5.3"
+  },
+
+  "suggest": {
+    "ext-mongo": "For using MongoAuthService",
+    "doctrine/dbal": "For using DoctrineAuthService"
+  },
+
+  "autoload": {
+    "psr-0": {
+      "mym\\REST": "src/"
+    }
+  }
+}
