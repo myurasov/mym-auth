@@ -77,7 +77,7 @@ class DoctrineAuthService extends AbstractAuthService
       ->setParameter(1, time());
 
     if ($r = $qb->execute()->fetch()) {
-      return (int) $r['expires'];
+      return \DateTime::createFromFormat('U', (int) $r['expires']);
     } else {
       return false;
     }
