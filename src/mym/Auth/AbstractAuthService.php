@@ -6,6 +6,7 @@
 
 namespace mym\Auth;
 
+use Doctrine\Common\Persistence\ObjectRepository;
 use mym\Util\Strings;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,7 +51,7 @@ abstract class AbstractAuthService
 
   public function createToken($userId)
   {
-    $token = Strings::createRandomString(null, Strings::ALPHABET_ALPHANUMERICAL, 256);
+    $token = Strings::createRandomString(null, Strings::ALPHABET_ALPHANUMERICAL, 512);
     $this->setUserId($token, $userId, true);
     return $token;
   }
