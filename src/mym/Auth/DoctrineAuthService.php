@@ -112,7 +112,7 @@ class DoctrineAuthService extends AbstractAuthService
     $schema = new Schema();
     $table = $schema->createTable($this->tableName);
     $table->addColumn('id', Type::INTEGER, array('autoincrement' => true));
-    $table->addColumn('token', Type::STRING, array('length' => 256, 'unique' => true));
+    $table->addColumn('token', Type::STRING, array('length' => 128, 'unique' => true));
     $table->addColumn('userId', Type::INTEGER);
     $table->addColumn('expires', Type::BIGINT, array('unsigned' => true));
     $table->addIndex(array('token'));
