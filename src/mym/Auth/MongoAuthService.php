@@ -18,8 +18,12 @@ class MongoAuthService extends AbstractAuthService
 
   private $mongoCollection;
 
-  public function __construct()
+  public function __construct(\MongoClient $mongoClient, $database, $collection)
   {
+    $this->setMongoClient($mongoClient);
+    $this->setDatabase($database);
+    $this->setCollection($collection);
+
     $this->mongoCollection = $this->mongoClient->selectCollection(
       $this->database, $this->collection
     );
